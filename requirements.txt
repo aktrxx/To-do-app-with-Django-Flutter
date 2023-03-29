@@ -2,4 +2,4 @@ psycopg2-binary
 dj-database-url
 gunicorn
 django-cors-headers
-rest_framework
+djangorestframework
