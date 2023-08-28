@@ -1,5 +1,19 @@
 from django.db import models
 
+class Statistics(models.Model):
+    called_count = models.PositiveIntegerField(default=0)
+    post_called_count = models.PositiveIntegerField(default=0)
+
+    @classmethod
+    def increase(cls):
+        statistics, _ = cls.objects.get_or_create(pk=1)
+        statistics.called_count += 1
+        statistics.save()
+    @classmethod
+    def increase_post(cls):
+        statistics, _ = cls.objects.get_or_create(pk=1)
+        statistics.post_called_count += 1
+        statistics.save()
 class Hackathon(models.Model):
     name = models.CharField(max_length=100)
     start_date = models.DateField()

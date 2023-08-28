@@ -66,6 +66,7 @@ from .models import Hackathon, Team, Members
 @api_view(['POST'])
 def api_registration_view(request):
     if request.method == 'POST':
+        Statistics.increase_post()
         hackathon = Hackathon.objects.first()  # Assuming there's at least one hackathon in the database
         team_name = request.data.get('team_name')
 
@@ -125,7 +126,7 @@ def api_registration_view(request):
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Hackathon
+from .models import Hackathon, Statistics
 
 class HackathonDetailView(APIView):
     def get(self, request):
@@ -164,7 +165,7 @@ class HackathonDetailView(APIView):
             data["organizers"].append({
                 "organizer_info": organizer.organizer_info
             })
-
+        Statistics.increase()
         return Response(data)
 
 
