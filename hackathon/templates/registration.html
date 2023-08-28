@@ -1,0 +1,78 @@
+<!-- hackathon_app/templates/registration.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hackathon Registration</title>
+</head>
+<body>
+    <h1>Hackathon Registration Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="team_name">Team Name:</label>
+        <input type="text" name="team_name" required><br><br>
+
+        <label for="team_member_1_name">Name of Team Member 1 (Team Leader):</label>
+        <input type="text" name="team_member_1_name" required><br><br>
+
+        <label for="team_member_1_department">Department of Team Member 1 (Team Leader):</label>
+        <input type="text" name="team_member_1_department" required><br><br>
+
+        <label for="team_member_1_phone">Phone number of Team Member 1 (Team Leader):</label>
+        <input type="text" name="team_member_1_phone" required><br><br>
+
+        <label for="team_member_1_email">Email address of Team Member 1 (Team Leader):</label>
+        <input type="email" name="team_member_1_email" required><br><br>
+
+        <label for="team_member_1_register_number">Register Number of Team Member 1 (Team Leader):</label>
+        <input type="text" name="team_member_1_register_number" required><br><br>
+
+        <label for="team_member_2_name">Name of Team Member 2:</label>
+        <input type="text" name="team_member_2_name" required><br><br>
+
+        <label for="team_member_2_department">Department of Team Member 2:</label>
+        <input type="text" name="team_member_2_department" required><br><br>
+
+        <label for="team_member_2_phone">Phone number of Team Member 2:</label>
+        <input type="text" name="team_member_2_phone" required><br><br>
+
+        <label for="team_member_2_email">Email address of Team Member 2:</label>
+        <input type="email" name="team_member_2_email" required><br><br>
+
+        <label for="team_member_2_register_number">Register Number of Team Member 2:</label>
+        <input type="text" name="team_member_2_register_number" required><br><br>
+
+        <label for="team_member_3_name">Name of Team Member 3 (Optional):</label>
+        <input type="text" name="team_member_3_name"><br><br>
+
+        <label for="team_member_3_department">Department of Team Member 3 (Optional):</label>
+        <input type="text" name="team_member_3_department"><br><br>
+
+        <label for="team_member_3_phone">Phone number of Team Member 3 (Optional):</label>
+        <input type="text" name="team_member_3_phone"><br><br>
+
+        <label for="team_member_3_email">Email address of Team Member 3 (Optional):</label>
+        <input type="email" name="team_member_3_email"><br><br>
+
+        <label for="team_member_3_register_number">Register Number of Team Member 3 (Optional):</label>
+        <input type="text" name="team_member_3_register_number"><br><br>
+
+        <label for="team_member_4_name">Name of Team Member 4 (Optional):</label>
+        <input type="text" name="team_member_4_name"><br><br>
+
+        <label for="team_member_4_department">Department of Team Member 4 (Optional):</label>
+        <input type="text" name="team_member_4_department"><br><br>
+
+        <label for="team_member_4_phone">Phone number of Team Member 4 (Optional):</label>
+        <input type="text" name="team_member_4_phone"><br><br>
+
+        <label for="team_member_4_email">Email address of Team Member 4 (Optional):</label>
+        <input type="email" name="team_member_4_email"><br><br>
+
+        <label for="team_member_4_register_number">Register Number of Team Member 4 (Optional):</label>
+        <input type="text" name="team_member_4_register_number"><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>

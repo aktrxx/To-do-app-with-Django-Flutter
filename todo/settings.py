@@ -14,10 +14,8 @@ from pathlib import Path
 import os
 
 import dj_database_url
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -44,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api.apps.ApiConfig',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
+    'hackathon'
 ]
 
 MIDDLEWARE = [
@@ -88,10 +87,14 @@ WSGI_APPLICATION = 'todo.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-
 DATABASES = {
-    'default': dj_database_url.parse('postgres://todo_db_z17m_user:WdivkvTI3seGb8tGMB6HUZR7fQBEVB6I@dpg-cgi2g16bb6mopq6ibmlg-a/todo_db_z17m')
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'), conn_max_age=600),
 }
+
+
+# DATABASES = {
+#     'default': dj_database_url.parse('postgres://mydb_otke_user:Zsf5rTwsNdDSD4qwdP0iS2otjbbSyz9t@dpg-cjhs3ur6fquc73andin0-a.singapore-postgres.render.com/mydb_otke')
+# }
 
 
 # Password validation
