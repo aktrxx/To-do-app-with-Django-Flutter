@@ -237,7 +237,7 @@ def export_registered_students(request):
     return response
 
 @staff_member_required
-def statistics_json(request):
+def statistics_view(request):
     # Retrieve the Statistics object
     statistics, _ = Statistics.objects.get_or_create(pk=1)
     data = {
@@ -248,14 +248,3 @@ def statistics_json(request):
 
     return JsonResponse(data)
 
-@staff_member_required
-def statistics_view(request):
-    # Retrieve the Statistics object
-    statistics, _ = Statistics.objects.get_or_create(pk=1)
-    data = {
-        'GET_req_called_count': statistics.called_count,
-        'POST_req_called_count': statistics.post_called_count,
-        'POST_saved_count' : 24
-    }
-
-    return Response(data)
