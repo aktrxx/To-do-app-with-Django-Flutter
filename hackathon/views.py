@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 # from .models import Hackathon, Team, TeamMember
 # from django.shortcuts import render, redirect
 from .models import Hackathon, Team, Members
+from django.contrib.admin.views.decorators import user_passes_test, staff_member_required
 
 # hackathon_app/views.py
 
@@ -234,3 +235,15 @@ def export_registered_students(request):
 
     workbook.save(response)
     return response
+
+@staff_member_required
+def statistics_view(request):
+    # Retrieve the Statistics object
+    statistics, _ = Statistics.objects.get_or_create(pk=1)
+    data = {
+        'GET_req_called_count': statistics.called_count,
+        'POST_req_called_count': statistics.post_called_count,
+        'POST_saved_count' : 18
+    }
+
+    return JsonResponse(data)
