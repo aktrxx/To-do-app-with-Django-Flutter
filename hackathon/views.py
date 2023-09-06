@@ -243,7 +243,6 @@ def statistics_view(request):
     data = {
         'GET_req_called_count': statistics.called_count,
         'POST_req_called_count': statistics.post_called_count,
-        'POST_saved_count' : 24
     }
 
     return JsonResponse(data)
