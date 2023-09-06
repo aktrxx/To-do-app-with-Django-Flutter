@@ -241,8 +241,8 @@ def statistics_view(request):
     # Retrieve the Statistics object
     statistics, _ = Statistics.objects.get_or_create(pk=1)
     data = {
-        'GET_req_called_count': statistics.called_count,
-        'POST_req_called_count': statistics.post_called_count,
+        'GET_request_count': statistics.called_count,
+        'POST_request_count': statistics.post_called_count,
     }
 
     return JsonResponse(data)
